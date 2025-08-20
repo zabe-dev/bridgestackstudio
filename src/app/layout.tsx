@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+
+const outfit = Outfit({
+	variable: "--font-outfit",
+	subsets: ["latin"],
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+	display: "swap",
+});
 
 export const metadata: Metadata = {
 	title: "Bridge Stack Studio | Indiana Web Development Agency",
@@ -14,14 +23,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<head>
-				<link
-					rel="icon"
-					href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"
-				/>
-			</head>
-			<body className="antialiased">
+		<html className="text-sm/6" lang="en" suppressHydrationWarning>
+			<body
+				className={cn(outfit.style, "min-h-svh w-full min-w-80 antialiased")}
+			>
 				{children}
 				<SpeedInsights />
 			</body>
