@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/styles/globals.css";
-
 
 export const metadata: Metadata = {
 	title: "Bridge Stack Studio | Indiana Web Development Agency",
-	description: "Bridge Stack Studio is a web development agency based in Indiana, specializing in building modern web applications and digital solutions.",
+	description:
+		"Bridge Stack Studio is a web development agency based in Indiana, specializing in building modern web applications and digital solutions.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
 			</head>
 			<body className="antialiased">
 				{children}
-				<SpeedInsights/>
+				<SpeedInsights />
 			</body>
 		</html>
 	);
