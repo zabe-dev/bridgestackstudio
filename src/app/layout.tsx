@@ -17,8 +17,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
 	title: {
-		default: `${SITE_TITLE}| Indiana Web Development Agency`,
-		template: `%s | ${SITE_TITLE} `,
+		default: `Indiana Web Development Agency - ${SITE_TITLE}`,
+		template: `%s - ${SITE_TITLE}`,
 	},
 	description: SITE_DESCRIPTION,
 	metadataBase: new URL(
@@ -46,7 +46,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Header />
-					<main className="relative flex flex-1 flex-col overflow-hidden">
+					<main className="relative mx-auto flex max-w-7xl flex-1 flex-col overflow-hidden px-4 xl:px-0">
 						{children}
 					</main>
 					<Footer />

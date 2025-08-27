@@ -9,4 +9,10 @@ export const CONTACT_EMAIL = "contact@bridgestackstudio.com";
 export const PHONE_NUMBER = "+1 (502) 650-1044";
 
 // Site menu
-export const NAV_LINK = ["Home", "About", "Services", "Pricing", "Blog"];
+export const NAV_LINKS = [
+	{ index: 0, label: "Home", path: "/" },
+	{ index: 1, label: "About", path: "/about" },
+	{ index: 2, label: "Services", path: "/services" },
+	{ index: 3, label: "Pricing", path: "/pricing" },
+	{ index: 4, label: "Blog", path: "/blog" },
+];
