@@ -19,8 +19,8 @@ export default function Header() {
 							{e.label}
 						</Link>
 					))}
-					<ModeToggle />
 					<Button className="cursor-pointer">Contact us</Button>
+					<ModeToggle />
 				</div>
 			</div>
 		</div>
