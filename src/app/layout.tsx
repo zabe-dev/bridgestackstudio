@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -32,7 +34,10 @@ export default function RootLayout({
 	return (
 		<html className="text-sm/6" lang="en" suppressHydrationWarning>
 			<body
-				className={cn(outfit.style, "min-h-svh w-full min-w-80 antialiased")}
+				className={cn(
+					outfit.style,
+					"flex min-h-svh w-full min-w-80 flex-col antialiased"
+				)}
 			>
 				<ThemeProvider
 					attribute="class"
@@ -40,7 +45,11 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<main className="relative overflow-hidden">{children}</main>
+					<Header />
+					<main className="relative flex flex-1 flex-col overflow-hidden">
+						{children}
+					</main>
+					<Footer />
 				</ThemeProvider>
 				<SpeedInsights />
 			</body>
