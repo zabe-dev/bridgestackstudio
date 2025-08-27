@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import "@/styles/globals.css";
+import "./globals.css";
 
 const outfit = Outfit({
 	variable: "--font-outfit",
@@ -12,9 +14,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-	title: "Bridge Stack Studio | Indiana Web Development Agency",
-	description:
-		"Bridge Stack Studio is a web development agency based in Indiana, specializing in building modern web applications and digital solutions.",
+	title: {
+		default: `${SITE_TITLE}| Indiana Web Development Agency`,
+		template: `%s | ${SITE_TITLE} `,
+	},
+	description: SITE_DESCRIPTION,
+	metadataBase: new URL(
+		process.env.NODE_ENV === "production" ? SITE_URL : "http://localhost:3000"
+	),
 };
 
 export default function RootLayout({
@@ -27,7 +34,14 @@ export default function RootLayout({
 			<body
 				className={cn(outfit.style, "min-h-svh w-full min-w-80 antialiased")}
 			>
-				{children}
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<main className="relative overflow-hidden">{children}</main>
+				</ThemeProvider>
 				<SpeedInsights />
 			</body>
 		</html>
