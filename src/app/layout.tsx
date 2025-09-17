@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import clsx from "clsx";
+import Navbar from "@/components/navbar";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
@@ -61,10 +62,11 @@ export default function RootLayout({
 			<body
 				className={clsx(
 					poppins.variable,
-					"flex min-h-svh w-full min-w-80 flex-col antialiased"
+					"grid min-w-80 grid-cols-[60px_1fr] antialiased"
 				)}
 			>
-				<main className="relative mx-auto flex max-w-7xl flex-1 flex-col overflow-hidden px-4 xl:px-0">
+				<Navbar />
+				<main className="relative mx-auto flex max-w-[1440px] flex-1 flex-col overflow-hidden px-4 xl:px-0">
 					{children}
 				</main>
 				<SpeedInsights />
