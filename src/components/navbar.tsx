@@ -15,7 +15,7 @@ export default function Navbar() {
 				].map((item) => (
 					<li
 						key={item.href}
-						className="hover:bg-background hover:border-r-primary flex h-[100px] cursor-pointer items-center justify-center border-r border-r-transparent text-xl opacity-50 transition-all duration-100 hover:opacity-100"
+						className="hover:bg-background hover:border-r-primary flex h-[100px] items-center justify-center border-r border-r-transparent text-xl opacity-50 transition-all duration-100 hover:opacity-100"
 					>
 						<Link href={item.href}>{item.label}</Link>
 					</li>
