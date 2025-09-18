@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import clsx from "clsx";
-import Navbar from "@/components/navbar";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -60,18 +59,12 @@ export default function RootLayout({
 	return (
 		<html className="text-sm/6" lang="en">
 			<body
-				className={clsx(
-					poppins.variable,
-					"grid min-w-80 grid-cols-[60px_1fr] antialiased"
+				className={cn(
+					poppins.className,
+					"relative grid min-w-80 grid-cols-[64px_1fr] antialiased"
 				)}
 			>
-				{/* left column nav */}
-				<Navbar />
-
-				{/* right column content */}
-				<main className="col-start-2 h-screen overflow-y-auto">{children}</main>
-
-				{/* vercel speed insights */}
+				{children}
 				<SpeedInsights />
 			</body>
 		</html>

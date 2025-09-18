@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Logo() {
 	return (
-		<Link href="/" aria-label="Home" className="block text-center">
+		<Link href="/" className="block text-center">
 			<svg
 				viewBox="0 0 200 200"
 				xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export default function Logo() {
 					textAnchor="middle"
 					dominantBaseline="middle"
 					fontFamily="Poppins, sans-serif"
-					fontSize="120"
+					fontSize="105"
 					fontWeight="900"
 					fill="currentColor"
 				>
