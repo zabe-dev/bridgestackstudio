@@ -3,7 +3,7 @@ import Logo from "./logo";
 
 export default function Navbar() {
 	return (
-		<nav className="sticky top-0 left-0 flex min-h-svh flex-col items-center overflow-y-auto">
+		<nav className="sticky top-0 left-0 z-10 flex h-screen w-[60px] flex-col items-center overflow-y-scroll">
 			<Logo />
 			<ul className="my-8 flex w-full flex-col items-stretch justify-center">
 				{[

@@ -58,17 +58,20 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html className="text-sm/6" lang="en" suppressHydrationWarning>
+		<html className="text-sm/6" lang="en">
 			<body
 				className={clsx(
 					poppins.variable,
 					"grid min-w-80 grid-cols-[60px_1fr] antialiased"
 				)}
 			>
+				{/* left column nav */}
 				<Navbar />
-				<main className="relative mx-auto flex max-w-[1440px] flex-1 flex-col overflow-hidden px-4 xl:px-0">
-					{children}
-				</main>
+
+				{/* right column content */}
+				<main className="col-start-2 h-screen overflow-y-auto">{children}</main>
+
+				{/* vercel speed insights */}
 				<SpeedInsights />
 			</body>
 		</html>
