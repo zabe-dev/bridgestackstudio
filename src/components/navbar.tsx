@@ -8,7 +8,7 @@ import Logo from "./logo";
 export default function Navbar() {
 	return (
 		<motion.aside
-			className="bg-aside-background sticky top-0 left-0 z-10 h-svh overflow-y-scroll"
+			className="bg-aside-background sticky top-0 left-0 z-10 min-h-svh md:h-screen"
 			initial={{ x: -64, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ duration: 0.6, ease: "easeOut" }}

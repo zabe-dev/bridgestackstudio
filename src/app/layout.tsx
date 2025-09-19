@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Navbar from "@/components/navbar";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -64,7 +65,10 @@ export default function RootLayout({
 					"relative grid min-w-md grid-cols-[64px_1fr] antialiased"
 				)}
 			>
-				{children}
+				<Navbar />
+				<div className="flex flex-1 flex-col overflow-y-auto px-4 sm:px-8">
+					{children}
+				</div>
 				<SpeedInsights />
 			</body>
 		</html>

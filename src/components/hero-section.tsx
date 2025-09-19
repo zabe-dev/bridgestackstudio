@@ -1,43 +1,55 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
 import { IconArrowDown, IconRocket } from "@tabler/icons-react";
+import { motion } from "motion/react";
 import RevealOnScroll from "./reveal-on-scroll";
 import { Button } from "./ui/button";
 
 export default function HeroSection() {
 	return (
 		<RevealOnScroll delay={0.5}>
-			<section className="mx-auto flex min-h-screen max-w-[1400px] flex-col px-8 py-24 md:grid md:grid-cols-2 md:py-36">
-				<div className="flex flex-col gap-6 py-16 sm:gap-8">
-					<h2 className="text-foreground/80 text-xs font-bold tracking-widest uppercase sm:text-sm">
-						CUSTOM CODED<span className="text-primary">.</span> BLAZING FAST
-						<span className="text-primary">.</span> ZERO HASSLE
-						<span className="text-primary">.</span>
-					</h2>
-					<h1 className="leading-tightest text-5xl font-black sm:text-6xl">
+			<section className="mx-auto flex min-h-screen max-w-[1400px] flex-col px-8 py-12 md:grid md:grid-cols-2 md:py-32">
+				<div className="flex flex-col gap-6 py-2 md:gap-8">
+					<div className="flex flex-wrap gap-2">
+						{["CUSTOM CODED", "BLAZING FAST", "ZERO HASSLE"].map(
+							(text, index) => (
+								<p
+									key={index}
+									className="text-foreground/80 text-xs font-bold tracking-widest uppercase md:text-sm"
+								>
+									{text}
+									<span className="text-primary">.</span>
+								</p>
+							)
+						)}
+					</div>
+					<h1 className="leading-tightest text-5xl font-black md:text-6xl">
 						Building Websites That{" "}
 						<span className="text-primary">Drive Growth</span> for Your
 						Business.
 					</h1>
-					<p className="text-foreground/95 leading-8 font-light sm:text-lg">
+					<p className="text-foreground/95 leading-8 font-light md:text-lg">
 						We build lightning-fast, custom websites for local businesses. No
 						templates, no page builders — just modern, hand-coded design. We
 						handle everything for you including hosting, updates and maintenance
 						so you can focus on running your business.
 					</p>
-					<div className="flex flex-col gap-4 sm:flex-row">
+					<div className="flex flex-col gap-4 md:flex-row">
 						<Button
 							asChild
 							size="lg"
-							className="bg-primary text-background p-4 pt-4 sm:p-6"
+							className="bg-primary text-background p-4 pt-4 md:p-6"
 						>
 							<Link href="#contact">
-								<IconRocket /> Launch your website today
+								<IconRocket /> Let&apos;s get started
 							</Link>
 						</Button>
 						<Button
 							asChild
 							size="lg"
-							className="text-foreground p-4 pt-4 sm:p-6"
+							className="text-foreground p-4 pt-4 md:p-6"
 							variant="outline"
 						>
 							<Link href="#services">
@@ -46,6 +58,25 @@ export default function HeroSection() {
 							</Link>
 						</Button>
 					</div>
+				</div>
+				<div className="relative flex flex-row-reverse md:flex-row">
+					<motion.div
+						animate={{ y: [0, -15, 0] }}
+						transition={{
+							duration: 4,
+							repeat: Infinity,
+							ease: "easeInOut",
+						}}
+						className="absolute top-0 mx-auto mt-12 md:left-25 md:mt-0"
+					>
+						<Image
+							src="/hero-section-image.svg"
+							alt="Hero Image"
+							width={550}
+							height={550}
+							priority
+						/>
+					</motion.div>
 				</div>
 			</section>
 		</RevealOnScroll>
