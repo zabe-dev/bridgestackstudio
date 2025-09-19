@@ -9,11 +9,11 @@ import { Button } from "./ui/button";
 
 export default function HeroSection() {
 	return (
-		<RevealOnScroll delay={0.5}>
-			<section
-				id="hero"
-				className="mx-auto flex max-w-[1440px] flex-col px-8 py-12 md:grid md:grid-cols-2 md:py-48"
-			>
+		<section
+			id="hero"
+			className="mx-auto flex max-w-[1440px] flex-col px-8 py-12 md:grid md:grid-cols-2 md:py-48"
+		>
+			<RevealOnScroll delay={0.5}>
 				<div className="flex flex-col gap-6 pt-2 md:gap-8">
 					<div className="flex flex-wrap gap-2">
 						{["CUSTOM CODED", "BLAZING FAST", "ZERO HASSLE"].map(
@@ -62,26 +62,26 @@ export default function HeroSection() {
 						</Button>
 					</div>
 				</div>
-				<div className="relative">
-					<motion.div
-						animate={{ y: [0, -15, 0] }}
-						transition={{
-							duration: 4,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-						className="relative top-0 mx-auto mt-12 md:left-25 md:mt-0"
-					>
-						<Image
-							src="/hero-section-image.svg"
-							alt="Hero Image"
-							width={550}
-							height={550}
-							priority
-						/>
-					</motion.div>
-				</div>
-			</section>
-		</RevealOnScroll>
+			</RevealOnScroll>
+			<div className="relative">
+				<motion.div
+					animate={{ y: [0, -15, 0] }}
+					transition={{
+						duration: 4,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+					className="relative top-0 mx-auto mt-12 md:left-25 md:mt-0"
+				>
+					<Image
+						src="/hero-section-image.svg"
+						alt="Hero Image"
+						width={550}
+						height={550}
+						priority
+					/>
+				</motion.div>
+			</div>
+		</section>
 	);
 }
