@@ -7,9 +7,9 @@ export default function ServicesSection() {
 		<RevealOnScroll delay={0.5}>
 			<section
 				id="services"
-				className="mx-auto flex max-w-[1400px] flex-col gap-4 px-8 py-12 md:pb-32"
+				className="mx-auto flex max-w-[1400px] flex-col gap-4 px-8 py-12 md:py-48"
 			>
-				<div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 text-center">
+				<div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 py-2 text-center">
 					<p className="text-foreground/80 text-xs font-bold tracking-widest uppercase md:text-sm">
 						BUILT FOR SMALL LOCAL BUSINESSES
 						<span className="text-primary">.</span>

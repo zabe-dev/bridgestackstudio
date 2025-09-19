@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Navbar from "@/components/navbar";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -59,14 +57,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="text-sm/6" lang="en">
-			<body
-				className={cn(
-					poppins.className,
-					"relative grid min-w-md grid-cols-[64px_1fr] antialiased"
-				)}
-			>
-				<Navbar />
-				<div className="flex flex-1 flex-col px-4 sm:px-8">{children}</div>
+			<body className={`${poppins.className} antialiased`}>
+				{children}
 				<SpeedInsights />
 			</body>
 		</html>

@@ -11,7 +11,7 @@ export default function AboutSection() {
 		<RevealOnScroll delay={0.5}>
 			<section
 				id="about"
-				className="mx-auto flex max-w-[1400px] flex-col-reverse px-8 py-12 md:grid md:grid-cols-2 md:pb-32"
+				className="mx-auto flex max-w-[1400px] flex-col-reverse px-8 py-12 md:grid md:grid-cols-2 md:py-48"
 			>
 				<div className="relative">
 					<motion.div

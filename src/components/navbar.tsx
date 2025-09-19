@@ -1,14 +1,40 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { MENU_ITEMS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import Logo from "./logo";
 
 export default function Navbar() {
+	const [activeSection, setActiveSection] = useState("");
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = MENU_ITEMS.map((item) => item.href.replace("#", ""));
+
+			for (const sectionId of sections) {
+				const element = document.getElementById(sectionId);
+				if (element) {
+					const rect = element.getBoundingClientRect();
+					if (rect.top <= 100 && rect.bottom >= 100) {
+						setActiveSection(`#${sectionId}`);
+						break;
+					}
+				}
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		handleScroll();
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	return (
 		<motion.aside
-			className="bg-aside-background sticky top-0 left-0 z-10 min-h-svh md:h-screen"
+			className="bg-aside-background sticky top-0 left-0 z-10 h-screen"
 			initial={{ x: -64, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{ duration: 0.6, ease: "easeOut" }}
@@ -68,7 +94,12 @@ export default function Navbar() {
 						>
 							<Link
 								href={href}
-								className="hover:border-r-primary hover:bg-background flex h-28 w-16 items-center justify-center border-r border-r-transparent text-xl opacity-50 transition-all duration-500 hover:opacity-100"
+								className={cn(
+									"hover:border-r-primary hover:bg-background flex h-28 w-16 items-center justify-center border-r border-r-transparent text-xl opacity-50 transition-all duration-500 hover:opacity-100",
+									activeSection === href
+										? "border-r-primary bg-background opacity-100"
+										: ""
+								)}
 							>
 								{label}
 							</Link>
