@@ -57,7 +57,7 @@ export default function Header() {
 				}}
 			>
 				<IconMail size={18} />
-				Send us a message
+				Send us an email
 			</motion.a>
 		</header>
 	);

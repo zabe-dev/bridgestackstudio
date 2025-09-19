@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IconArrowDown, IconRocket } from "@tabler/icons-react";
+import { IconBlocks, IconRocket } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import RevealOnScroll from "./reveal-on-scroll";
 import { Button } from "./ui/button";
@@ -10,8 +10,8 @@ import { Button } from "./ui/button";
 export default function HeroSection() {
 	return (
 		<RevealOnScroll delay={0.5}>
-			<section className="mx-auto flex min-h-screen max-w-[1400px] flex-col px-8 py-12 md:grid md:grid-cols-2 md:py-32">
-				<div className="flex flex-col gap-6 py-2 md:gap-8">
+			<section className="mx-auto flex max-w-[1400px] flex-col px-8 py-12 md:grid md:grid-cols-2 md:pb-32">
+				<div className="flex flex-col gap-6 pt-2 md:gap-8">
 					<div className="flex flex-wrap gap-2">
 						{["CUSTOM CODED", "BLAZING FAST", "ZERO HASSLE"].map(
 							(text, index) => (
@@ -30,7 +30,7 @@ export default function HeroSection() {
 						<span className="text-primary">Drive Growth</span> for Your
 						Business.
 					</h1>
-					<p className="text-foreground/95 leading-8 font-light md:text-lg">
+					<p className="text-foreground/95 leading-7 font-light md:text-lg md:leading-8">
 						We build lightning-fast, custom websites for local businesses. No
 						templates, no page builders — just modern, hand-coded design. We
 						handle everything for you including hosting, updates and maintenance
@@ -53,13 +53,13 @@ export default function HeroSection() {
 							variant="outline"
 						>
 							<Link href="#services">
-								View services
-								<IconArrowDown />
+								<IconBlocks />
+								Learn more
 							</Link>
 						</Button>
 					</div>
 				</div>
-				<div className="relative flex flex-row-reverse md:flex-row">
+				<div className="relative flex md:flex-row">
 					<motion.div
 						animate={{ y: [0, -15, 0] }}
 						transition={{
@@ -67,7 +67,7 @@ export default function HeroSection() {
 							repeat: Infinity,
 							ease: "easeInOut",
 						}}
-						className="absolute top-0 mx-auto mt-12 md:left-25 md:mt-0"
+						className="relative top-0 mx-auto mt-12 md:left-25 md:mt-0"
 					>
 						<Image
 							src="/hero-section-image.svg"

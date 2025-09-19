@@ -66,9 +66,7 @@ export default function RootLayout({
 				)}
 			>
 				<Navbar />
-				<div className="flex flex-1 flex-col overflow-y-auto px-4 sm:px-8">
-					{children}
-				</div>
+				<div className="flex flex-1 flex-col px-4 sm:px-8">{children}</div>
 				<SpeedInsights />
 			</body>
 		</html>
