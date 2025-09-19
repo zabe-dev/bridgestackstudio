@@ -11,11 +11,12 @@ export default function ServicesSection() {
 			>
 				<div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 text-center">
 					<p className="text-foreground/80 text-xs font-bold tracking-widest uppercase md:text-sm">
-						BUILT FOR SMALL LOCAL BUSINESS
+						BUILT FOR SMALL LOCAL BUSINESSES
 						<span className="text-primary">.</span>
 					</p>
 					<p className="leading-tightest text-4xl font-black md:text-6xl">
-						We <span className="text-primary">build, host</span> and{" "}
+						We <span className="text-primary">build</span>,{" "}
+						<span className="text-primary">host</span> and{" "}
 						<span className="text-primary">maintain</span> your website so you
 						can focus on your business.
 					</p>
