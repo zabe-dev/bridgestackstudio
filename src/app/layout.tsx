@@ -61,7 +61,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					poppins.className,
-					"relative grid min-w-80 grid-cols-[64px_1fr] antialiased"
+					"relative grid min-w-md grid-cols-[64px_1fr] antialiased"
 				)}
 			>
 				{children}

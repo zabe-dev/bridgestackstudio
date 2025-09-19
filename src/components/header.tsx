@@ -6,7 +6,7 @@ import {
 	IconBrandX,
 	IconMail,
 } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const socialLinks = [
 	{
@@ -48,9 +48,13 @@ export default function Header() {
 			<motion.a
 				href="mailto:contact@bridgestackstudio.com"
 				className="border-primary text-primary hover:bg-primary focus-visible:ring-primary/50 hover:text-background inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2 text-sm font-medium transition-colors duration-500 focus-visible:ring-2 focus-visible:outline-none"
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.6, delay: 0.3 }}
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0.3,
+					ease: "easeOut",
+				}}
 			>
 				<IconMail size={18} />
 				Send us a message
