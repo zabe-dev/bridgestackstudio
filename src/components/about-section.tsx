@@ -63,7 +63,7 @@ export default function AboutSection() {
 					<div className="flex flex-col gap-4 md:flex-row">
 						<Link
 							href="#contact"
-							className="text-primary border-primary/20 hover:bg-primary/10 flex w-fit items-center gap-2 rounded-lg border-2 p-4 text-lg font-medium transition-colors duration-500 hover:text-green-400"
+							className="text-primary border-primary/20 hover:bg-primary/10 flex w-fit items-center gap-2 rounded-lg border-2 p-4 font-medium transition-colors duration-500 hover:text-green-400"
 						>
 							<IconHeartHandshake /> Work With Us
 						</Link>

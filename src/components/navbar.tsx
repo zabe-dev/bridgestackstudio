@@ -11,25 +11,28 @@ export default function Navbar() {
 	const [activeSection, setActiveSection] = useState("");
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const sections = MENU_ITEMS.map((item) => item.href.replace("#", ""));
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const visibleSections = entries
+					.filter((e) => e.isIntersecting)
+					.map((e) => `#${e.target.id}`)
+					.filter((id) => MENU_ITEMS.some((item) => item.href === id));
 
-			for (const sectionId of sections) {
-				const element = document.getElementById(sectionId);
-				if (element) {
-					const rect = element.getBoundingClientRect();
-					if (rect.top <= 100 && rect.bottom >= 100) {
-						setActiveSection(`#${sectionId}`);
-						break;
-					}
+				if (visibleSections.length > 0) {
+					setActiveSection(visibleSections[0]);
+				} else {
+					setActiveSection("");
 				}
-			}
-		};
+			},
+			{ rootMargin: "-50% 0px -50% 0px" }
+		);
 
-		window.addEventListener("scroll", handleScroll);
-		handleScroll();
+		MENU_ITEMS.forEach((item) => {
+			const el = document.getElementById(item.href.slice(1));
+			if (el) observer.observe(el);
+		});
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => observer.disconnect();
 	}, []);
 
 	return (
