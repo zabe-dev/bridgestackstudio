@@ -11,7 +11,7 @@ export default function AboutSection() {
 		<RevealOnScroll delay={0.5}>
 			<section
 				id="about"
-				className="mx-auto flex max-w-[1400px] px-8 py-12 md:grid md:grid-cols-2 md:pb-32"
+				className="mx-auto flex max-w-[1400px] flex-col-reverse px-8 py-12 md:grid md:grid-cols-2 md:pb-32"
 			>
 				<div className="relative">
 					<motion.div
@@ -39,8 +39,8 @@ export default function AboutSection() {
 							<span className="text-primary">.</span>
 						</p>
 					</div>
-					<p className="leading-tightest text-5xl font-black md:text-6xl">
-						<span className="text-primary">What</span> sets us apart?
+					<p className="leading-tightest text-4xl font-black md:text-6xl">
+						What sets us <span className="text-primary">apart</span>?
 					</p>
 					<p className="text-foreground/95 leading-7 font-light md:text-lg md:leading-8">
 						We’re an Indiana-based startup web agency dedicated to helping small
