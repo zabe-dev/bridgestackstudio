@@ -44,7 +44,7 @@ export const services = [
 	{
 		title: "Unmatched Support",
 		description:
-			"We provide reliable support for 24 hours, 7 days a week to keep your website secure, updated, and performing at its best. You'll have peace of mind knowing help is always available.",
+			"We provide reliable support  to keep your website secure, updated, and performing at its best. You'll have peace of mind knowing help is always available.",
 		icon: <IconTools />,
 	},
 	{
