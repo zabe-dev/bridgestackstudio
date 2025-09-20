@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="text-sm/6" lang="en">
-			<body className={`${poppins.className} antialiased`}>
+			<body className={`${poppins.className} min-w-80 antialiased`}>
 				{children}
 				<SpeedInsights />
 			</body>

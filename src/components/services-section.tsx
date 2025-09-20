@@ -66,7 +66,7 @@ export default function ServicesSection() {
 	return (
 		<section
 			id="services"
-			className="mx-auto flex max-w-[1400px] flex-col gap-4 px-8 py-12 md:grid md:grid-cols-[40%_60%] md:py-48"
+			className="mx-auto flex max-w-[1440px] flex-col gap-4 px-8 py-12 md:grid md:grid-cols-[40%_60%] md:py-48"
 		>
 			<RevealOnScroll delay={0.2}>
 				<div className="mx-auto flex max-w-5xl flex-col gap-8 py-2">
@@ -79,7 +79,7 @@ export default function ServicesSection() {
 						can focus on business.
 					</p>
 					<p className="text-foreground/95 max-w-xl leading-7 font-light md:text-lg md:leading-8">
-						Our basic package includes design, development, hosting, unlimited
+						Our monthly package includes design, development, hosting, unlimited
 						edits, 24/7 support, and lifetime updates, all with a 12-month
 						minimum commitment.
 					</p>
