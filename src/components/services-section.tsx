@@ -44,7 +44,7 @@ export const services = [
 	{
 		title: "Unmatched Support",
 		description:
-			"We provide reliable support to keep your website secure, updated, and performing at its best. You'll have peace of mind knowing help is always available.",
+			"We provide reliable support for 24 hours, 7 days a week to keep your website secure, updated, and performing at its best. You'll have peace of mind knowing help is always available.",
 		icon: <IconTools />,
 	},
 	{
@@ -122,7 +122,7 @@ export default function ServicesSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
-					className="px-2"
+					className="px-0 md:px-2.5"
 				>
 					<HoverEffect items={services} />
 				</motion.div>
