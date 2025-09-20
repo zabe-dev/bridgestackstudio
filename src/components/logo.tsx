@@ -1,8 +1,13 @@
 import Link from "next/link";
 
 export default function Logo() {
+	const scrollToTop = (e: React.MouseEvent) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	};
+
 	return (
-		<Link href="/" className="block text-center">
+		<Link href="/" onClick={scrollToTop} className="block text-center">
 			<svg
 				viewBox="0 0 200 200"
 				xmlns="http://www.w3.org/2000/svg"
