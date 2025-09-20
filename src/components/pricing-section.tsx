@@ -16,7 +16,7 @@ const basicPlanFeatures: {
 			"Fully customized website design tailored to your brand identity.",
 			"Responsive layouts optimized for mobile, tablet, and desktop devices.",
 			"User-friendly navigation with SEO-ready structure to boost online visibility.",
-			"Includes up to 5 pages, with $100 per extra page if needed.",
+			"Includes up to 5 pages, with one-time payment of $75 per additional page.",
 		],
 	},
 	{
@@ -137,7 +137,7 @@ export default function PricingSection() {
 						title: "ONE-TIME",
 						description:
 							"Single payment package, with limited support and updates.",
-						price: "$2,500",
+						price: "$3,500",
 						subPrice: "+$25/month hosting",
 						features: basicPlanFeatures,
 					},

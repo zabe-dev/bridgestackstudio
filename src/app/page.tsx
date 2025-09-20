@@ -1,4 +1,5 @@
 import AboutSection from "@/components/about-section";
+import FaqsSection from "@/components/faqs-section";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
@@ -15,6 +16,7 @@ export default function Home() {
 				<AboutSection />
 				<ServicesSection />
 				<PricingSection />
+				<FaqsSection />
 			</div>
 		</div>
 	);
