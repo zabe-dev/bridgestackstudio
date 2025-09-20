@@ -96,7 +96,7 @@ export default function FaqsSection() {
 						If you can&#39;t find what you are looking for,{" "}
 						<Link
 							href="#contact"
-							className="hover:text-primary hover:border-b-primary border-b border-b-slate-200 transition-colors duration-500"
+							className="hover:text-primary hover:border-b-primary border-b-primary border-b-2 pb-1 transition-colors duration-500"
 						>
 							get in touch.
 						</Link>
