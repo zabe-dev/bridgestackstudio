@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IconBlocks, IconRocket } from "@tabler/icons-react";
+import { IconHelpHexagon, IconRocket } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import RevealOnScroll from "./reveal-on-scroll";
 import { Button } from "./ui/button";
@@ -56,7 +56,7 @@ export default function HeroSection() {
 							variant="outline"
 						>
 							<Link href="#services">
-								<IconBlocks />
+								<IconHelpHexagon />
 								Learn more
 							</Link>
 						</Button>
