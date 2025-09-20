@@ -66,10 +66,10 @@ export default function AboutSection() {
 						<Button
 							asChild
 							size="lg"
-							className="border-primary/20 text-background hover:bg-primary/10 w-fit gap-2 border-2 px-6 py-8 text-lg hover:text-green-400"
+							className="border-primary/20 text-background hover:bg-primary/10 gap-2 border-2 px-4 py-6 hover:text-green-400 md:px-6 md:py-8 md:text-lg"
 						>
 							<Link href="#contact">
-								<IconHeartHandshake /> Work With Us
+								<IconHeartHandshake /> Work with us
 							</Link>
 						</Button>
 
@@ -77,10 +77,10 @@ export default function AboutSection() {
 							asChild
 							variant="outline"
 							size="lg"
-							className="text-primary hover:bg-background/10 w-fit gap-2 border-2 px-6 py-8 text-lg"
+							className="text-primary hover:bg-background/10 gap-2 border-2 px-4 py-6 md:px-6 md:py-8 md:text-lg"
 						>
 							<Link href="#faqs">
-								<IconHelpHexagon /> Frequently Asked Questions
+								<IconHelpHexagon /> Frequently asked questions
 							</Link>
 						</Button>
 					</div>

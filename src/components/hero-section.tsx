@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IconHelpHexagon, IconRocket } from "@tabler/icons-react";
+import { IconBlocks, IconRocket } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import RevealOnScroll from "./reveal-on-scroll";
 import { Button } from "./ui/button";
@@ -43,7 +43,7 @@ export default function HeroSection() {
 						<Button
 							asChild
 							size="lg"
-							className="bg-primary text-background p-4 pt-4 md:p-6"
+							className="border-primary/20 text-background hover:bg-primary/10 gap-2 border-2 px-4 py-6 hover:text-green-400 md:px-6 md:py-8 md:text-lg"
 						>
 							<Link href="#contact">
 								<IconRocket /> Let&apos;s get started
@@ -52,11 +52,11 @@ export default function HeroSection() {
 						<Button
 							asChild
 							size="lg"
-							className="text-foreground p-4 pt-4 md:p-6"
+							className="text-primary hover:bg-background/10 gap-2 border-2 px-4 py-6 md:px-6 md:py-8 md:text-lg"
 							variant="outline"
 						>
 							<Link href="#services">
-								<IconHelpHexagon />
+								<IconBlocks />
 								Learn more
 							</Link>
 						</Button>
