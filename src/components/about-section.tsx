@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IconHeartHandshake } from "@tabler/icons-react";
+import { IconHeartHandshake, IconHelpHexagon } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import RevealOnScroll from "./reveal-on-scroll";
+import { Button } from "./ui/button";
 
 export default function AboutSection() {
 	return (
@@ -62,12 +63,26 @@ export default function AboutSection() {
 						solution.
 					</p>
 					<div className="flex flex-col gap-4 md:flex-row">
-						<Link
-							href="#contact"
-							className="text-primary border-primary/20 hover:bg-primary/10 flex w-fit items-center gap-2 rounded-lg border-2 p-4 font-medium transition-colors duration-500 hover:text-green-400"
+						<Button
+							asChild
+							size="lg"
+							className="border-primary/20 text-background hover:bg-primary/10 w-fit gap-2 border-2 px-6 py-8 text-lg hover:text-green-400"
 						>
-							<IconHeartHandshake /> Work With Us
-						</Link>
+							<Link href="#contact">
+								<IconHeartHandshake /> Work With Us
+							</Link>
+						</Button>
+
+						<Button
+							asChild
+							variant="outline"
+							size="lg"
+							className="text-primary hover:bg-background/10 w-fit gap-2 border-2 px-6 py-8 text-lg"
+						>
+							<Link href="#faqs">
+								<IconHelpHexagon /> Frequently Asked Questions
+							</Link>
+						</Button>
 					</div>
 				</div>
 			</section>
