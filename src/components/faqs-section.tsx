@@ -90,7 +90,7 @@ export default function FaqsSection() {
 						<span className="text-primary">.</span>
 					</p>
 					<p className="leading-tightest text-4xl font-black md:text-6xl">
-						Frequently Asked <span className="text-primary">Questions</span>
+						Frequently asked <span className="text-primary">questions.</span>
 					</p>
 					<p className="text-foreground/95 max-w-lg leading-7 font-light md:text-lg md:leading-8">
 						If you can&#39;t find what you are looking for,{" "}

@@ -26,11 +26,17 @@ export default function PricingCard({
 }) {
 	return (
 		<div
-			className={`flex flex-col gap-4 rounded-2xl border px-10 pt-12 ${
-				isPopular ? "border-primary/90" : "border-border"
-			}`}
+			className="flex flex-col gap-4 rounded-2xl border px-10 pt-12"
+			style={{ animation: isPopular ? "borderPulse 2s infinite" : "none" }}
 		>
-			<p className="text-xl font-bold">{title}</p>
+			<p className="flex w-full items-center">
+				<span className="mr-8 text-xl font-bold md:text-2xl">{title}</span>
+				{isPopular && (
+					<span className="bg-primary/80 text-background rounded-lg px-2.5 py-2 text-xs font-medium uppercase">
+						Most Popular Choice
+					</span>
+				)}
+			</p>
 			<p className="text-foreground/95 leading-6 font-light md:leading-7">
 				{description}
 			</p>

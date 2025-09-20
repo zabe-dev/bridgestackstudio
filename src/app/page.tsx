@@ -1,4 +1,5 @@
 import AboutSection from "@/components/about-section";
+import ContactSection from "@/components/contact-section";
 import FaqsSection from "@/components/faqs-section";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
@@ -17,6 +18,7 @@ export default function Home() {
 				<ServicesSection />
 				<PricingSection />
 				<FaqsSection />
+				<ContactSection />
 			</div>
 		</div>
 	);

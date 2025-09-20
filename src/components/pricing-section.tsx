@@ -134,7 +134,7 @@ export default function PricingSection() {
 			<div className="my-24 grid w-full grid-cols-1 gap-4 px-0 md:grid-cols-3 md:gap-6 md:px-24">
 				{[
 					{
-						title: "ONE-TIME",
+						title: "LUMP SUM",
 						description:
 							"Single payment package, with limited support and updates.",
 						price: "$3,500",
