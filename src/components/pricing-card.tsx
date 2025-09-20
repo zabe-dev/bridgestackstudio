@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IconCheck, IconPhone, IconX } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function PricingCard({
 	isPopular,
@@ -41,7 +42,10 @@ export default function PricingCard({
 			<Button
 				asChild
 				size="lg"
-				className="text-primary hover:bg-background/10 flex items-center gap-2 gap-4 rounded-xl border-2 px-4 py-6 font-medium md:px-6 md:py-8 md:text-lg"
+				className={cn(
+					"hover:bg-background/10 flex items-center gap-2 rounded-xl border-2 px-4 py-6 font-medium md:gap-4 md:px-6 md:py-8 md:text-lg",
+					isPopular ? "text-primary" : "text-foreground/90"
+				)}
 				variant="outline"
 			>
 				<Link href={cta.href}>

@@ -134,16 +134,16 @@ export default function PricingSection() {
 			<div className="my-24 grid w-full grid-cols-1 gap-4 px-0 md:grid-cols-3 md:gap-6 md:px-24">
 				{[
 					{
-						title: "ONE TIME PLAN",
+						title: "ONE-TIME",
 						description:
 							"Single payment package, with limited support and updates.",
-						price: "$3,000",
+						price: "$2,500",
 						subPrice: "+$25/month hosting",
 						features: basicPlanFeatures,
 					},
 					{
 						isPopular: true,
-						title: "MONTHLY PLAN",
+						title: "MONTHLY",
 						description:
 							"Flexible monthly subscription with ongoing updates and support.",
 						price: "$185/mo",
@@ -151,7 +151,7 @@ export default function PricingSection() {
 						features: monthlyPlanFeatures,
 					},
 					{
-						title: "ENTERPRISE PLAN",
+						title: "CUSTOM",
 						description:
 							"Tailored solutions for large businesses with premium support.",
 						price: "$8,000",
@@ -172,7 +172,7 @@ export default function PricingSection() {
 							description={card.description}
 							price={card.price}
 							subPrice={card.subPrice}
-							cta={{ href: "#services", text: "Schedule a call" }}
+							cta={{ href: "#contact", text: "Schedule a call" }}
 							features={card.features}
 						/>
 					</motion.div>
