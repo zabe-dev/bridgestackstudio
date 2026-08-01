@@ -1,0 +1,50 @@
+---
+eyebrow: "Invest in your growth"
+heading: "Plans & pricing"
+description: "Choose the plan that fits your needs and grow your business with confidence."
+plans:
+  - key: "Lump sum"
+    title: "Pay once"
+    desc: "A single payment package, with limited support and updates."
+    price: "$3,500"
+    priceNote: "+ $25/mo hosting"
+    popular: false
+    features:
+      - "Fully custom design for your brand"
+      - "Responsive across mobile, tablet, desktop"
+      - "SEO-ready navigation & structure"
+      - "Up to 5 pages ($75/page after that)"
+      - "Managed hosting with automatic backups"
+      - "Free domain & professional email"
+      - "24/7 support & unlimited revisions"
+      - "Lifetime updates, no extra fees"
+  - key: "Monthly"
+    title: "Pay monthly"
+    desc: "A flexible subscription with ongoing updates and support."
+    price: "$175"
+    priceNote: "/mo · one-year contract"
+    popular: true
+    features:
+      - "Fully custom design for your brand"
+      - "Responsive across mobile, tablet, desktop"
+      - "SEO-ready navigation & structure"
+      - "Up to 5 pages ($75/page after that)"
+      - "Managed hosting with automatic backups"
+      - "Free domain & professional email"
+      - "24/7 support & unlimited revisions"
+      - "Lifetime updates, no extra fees"
+  - key: "Custom"
+    title: "For larger builds"
+    desc: "Tailored solutions for larger businesses, with premium support."
+    price: "$8,000"
+    priceNote: "starting price"
+    popular: false
+    features:
+      - "Custom, scalable web applications"
+      - "Secure database integration & workflows"
+      - "Dashboards & reporting built for your data"
+      - "Native or cross-platform mobile apps"
+      - "CMS & ecommerce, built to handle traffic"
+      - "Cloud infrastructure with load balancing"
+      - "Dedicated account manager"
+---
