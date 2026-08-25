@@ -55,7 +55,7 @@ export default function Contact({ contact }: { contact: ContactContent }) {
             </div>
             <div className="row2">
               <div className="field">
-                <label htmlFor="fname">Full name *</label>
+                <label htmlFor="name">Full name *</label>
                 <input
                   id="name"
                   name="name"

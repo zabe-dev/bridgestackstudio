@@ -22,9 +22,15 @@ export default function Hero({ hero }: { hero: HeroContent }) {
                 {hero.ctaSecondary}
               </a>
             </div>
+            <div className="hero-proof" aria-label="Service highlights">
+              <span><strong>14–20</strong> days to launch</span>
+              <span><strong>100%</strong> custom coded</span>
+              <span><strong>Indiana</strong> based support</span>
+            </div>
           </div>
 
           <div className="hero-figure" aria-hidden="true">
+            <div className="figure-label figure-label-top">Strategy → structure</div>
             <svg
               viewBox="0 0 900 260"
               className="draw"
@@ -121,6 +127,7 @@ export default function Hero({ hero }: { hero: HeroContent }) {
               />
               <circle className="pulse-dot" r="4" fill="#f5a623" />
             </svg>
+            <div className="figure-label figure-label-bottom">Built to carry your business forward</div>
           </div>
         </div>
       </div>
