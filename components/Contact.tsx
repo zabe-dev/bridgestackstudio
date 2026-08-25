@@ -3,18 +3,39 @@
 import { FormEvent, useState } from "react";
 import { ContactContent } from "@/lib/content";
 
-const MAX_MESSAGE_LENGTH = 500;
+const MAX_MESSAGE_LENGTH = 2000;
+type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export default function Contact({ contact }: { contact: ContactContent }) {
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: wire this up to your form handler / API route / email service.
-    e.currentTarget.reset();
-    setMessage("");
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    setSubmitState("submitting");
+    setStatusMessage("Sending your message…");
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      });
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(result?.error || "Unable to send your message.");
+      }
+      form.reset();
+      setMessage("");
+      setSubmitState("success");
+      setStatusMessage("Thanks — your message was sent. We’ll be in touch shortly.");
+    } catch (error) {
+      setSubmitState("error");
+      setStatusMessage(error instanceof Error ? error.message : "Unable to send your message. Please try again.");
+    }
   }
 
   return (
@@ -27,13 +48,17 @@ export default function Contact({ contact }: { contact: ContactContent }) {
         </div>
 
         <div className="contact-grid">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} aria-busy={submitState === "submitting"}>
+            <div className="honeypot" aria-hidden="true">
+              <label htmlFor="websiteCompany">Leave this field blank</label>
+              <input id="websiteCompany" name="websiteCompany" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            </div>
             <div className="row2">
               <div className="field">
                 <label htmlFor="fname">Full name *</label>
                 <input
-                  id="fname"
-                  name="fname"
+                  id="name"
+                  name="name"
                   type="text"
                   placeholder="Enter your full name"
                   required
@@ -78,9 +103,14 @@ export default function Contact({ contact }: { contact: ContactContent }) {
               <input
                 id="url"
                 name="url"
-                type="text"
+                type="url"
                 placeholder="https://example.com"
               />
+            </div>
+
+            <div className="field">
+              <label htmlFor="subject">Subject *</label>
+              <input id="subject" name="subject" type="text" maxLength={200} placeholder="How can we help?" required />
             </div>
 
             <div className="field">
@@ -99,15 +129,13 @@ export default function Contact({ contact }: { contact: ContactContent }) {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-solid btn-arrow">
-              Send message
+            <button type="submit" className="btn btn-solid btn-arrow" disabled={submitState === "submitting"}>
+              {submitState === "submitting" ? "Sending…" : "Send message"}
             </button>
 
-            {submitted && (
-              <p style={{ color: "var(--text-dim)", marginTop: 14, fontSize: 13.5 }}>
-                Thanks — we&apos;ll be in touch shortly.
-              </p>
-            )}
+            <p className={`form-status${submitState === "error" ? " error" : ""}`} role={submitState === "error" ? "alert" : "status"} aria-live="polite">
+              {statusMessage}
+            </p>
           </form>
 
           <div className="contact-side">

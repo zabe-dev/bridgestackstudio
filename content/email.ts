@@ -8,6 +8,14 @@ export interface ContactEmailData {
 	message: string;
 }
 
+export const escapeHtml = (value: string | undefined) =>
+	(value ?? "")
+		.replaceAll("&", "&amp;")
+		.replaceAll("<", "&lt;")
+		.replaceAll(">", "&gt;")
+		.replaceAll('"', "&quot;")
+		.replaceAll("'", "&#039;");
+
 export const ContactEmailTemplate = ({
 	name,
 	email,
@@ -217,7 +225,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-icon">👤</div>
 				<div class="field-content">
 					<div class="field-label">Full Name</div>
-					<div class="field-value">${name}</div>
+						<div class="field-value">${escapeHtml(name)}</div>
 				</div>
 			</div>
 
@@ -226,7 +234,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-content">
 					<div class="field-label">Email Address</div>
 					<div class="field-value">
-						<a href="mailto:${email}">${email}</a>
+							<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>
 					</div>
 				</div>
 			</div>
@@ -236,7 +244,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-content">
 					<div class="field-label">Phone Number</div>
 					<div class="field-value">
-						<a href="tel:${phone}">${phone}</a>
+							<a href="tel:${escapeHtml(phone)}">${escapeHtml(phone)}</a>
 					</div>
 				</div>
 			</div>
@@ -248,7 +256,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-icon">🏢</div>
 				<div class="field-content">
 					<div class="field-label">Company</div>
-					<div class="field-value">${company}</div>
+						<div class="field-value">${escapeHtml(company)}</div>
 				</div>
 			</div>`
 					: ""
@@ -262,7 +270,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-content">
 					<div class="field-label">Website</div>
 					<div class="field-value">
-						<a href="${website}" target="_blank">${website}</a>
+							<a href="${escapeHtml(website)}" target="_blank" rel="noopener noreferrer">${escapeHtml(website)}</a>
 					</div>
 				</div>
 			</div>`
@@ -273,7 +281,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-icon">📝</div>
 				<div class="field-content">
 					<div class="field-label">Subject</div>
-					<div class="field-value">${subject}</div>
+						<div class="field-value">${escapeHtml(subject)}</div>
 				</div>
 			</div>
 
@@ -281,7 +289,7 @@ export const ContactEmailTemplate = ({
 				<div class="field-icon">💬</div>
 				<div class="field-content">
 					<div class="field-label">Message</div>
-					<div class="field-value message-value">${message}</div>
+						<div class="field-value message-value">${escapeHtml(message)}</div>
 				</div>
 			</div>
 		</div>
@@ -295,7 +303,7 @@ export const ContactEmailTemplate = ({
 </html>
 `;
 
-export const ContactConfirmationTemplate = (name: string) => `Hi ${name},
+export const ContactConfirmationTemplate = (name: string) => `Hi ${name.replace(/[\r\n]+/g, " ")},
 
 Thank you for reaching out to Bridge Stack Studio!
 

@@ -51,6 +51,26 @@ h3 {
 a {
 	color: inherit;
 }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+	outline: 3px solid var(--cyan);
+	outline-offset: 3px;
+}
+.skip-link {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 1000;
+	transform: translateY(-160%);
+	background: var(--amber);
+	color: #171205;
+	padding: 10px 14px;
+	text-decoration: none;
+}
+.skip-link:focus {
+	transform: translateY(0);
+}
 img,
 svg {
 	display: block;
@@ -81,6 +101,7 @@ svg {
 }
 section {
 	position: relative;
+	scroll-margin-top: 76px;
 }
 
 /* ---------- grid backgrounds ---------- */
@@ -180,9 +201,48 @@ header {
 	align-items: center;
 	gap: 20px;
 }
+.mobile-menu {
+	display: none;
+}
 @media (max-width: 860px) {
 	.nav-links {
 		display: none;
+	}
+	.nav-cta {
+		display: none;
+	}
+	.mobile-menu {
+		display: block;
+		position: relative;
+		font-family: var(--font-mono);
+	}
+	.mobile-menu > button {
+		cursor: pointer;
+		padding: 9px 12px;
+		border: 1px solid var(--line);
+		background: transparent;
+		color: var(--text);
+		font: inherit;
+	}
+	.mobile-menu ul {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 10px);
+		min-width: 190px;
+		margin: 0;
+		padding: 8px;
+		list-style: none;
+		background: var(--panel);
+		border: 1px solid var(--line);
+		box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+	}
+	.mobile-menu a {
+		display: block;
+		padding: 10px 12px;
+		text-decoration: none;
+	}
+	.mobile-menu a:hover {
+		background: var(--panel-2);
 	}
 }
 
@@ -359,6 +419,10 @@ header {
 	.pulse-dot {
 		animation: none;
 		opacity: 0;
+	}
+	.reveal,
+	.layer {
+		transition: none;
 	}
 	html {
 		scroll-behavior: auto;
@@ -762,9 +826,16 @@ header {
 	transform: rotate(45deg);
 }
 .faq-a {
-	max-height: 0;
+	display: grid;
+	grid-template-rows: 0fr;
 	overflow: hidden;
-	transition: max-height 0.3s ease;
+	transition: grid-template-rows 0.3s ease;
+}
+.faq-item.open .faq-a {
+	grid-template-rows: 1fr;
+}
+.faq-a > p {
+	min-height: 0;
 }
 .faq-a p {
 	margin: 0 4px 22px;
@@ -826,6 +897,26 @@ header {
 	color: var(--text-dim);
 	text-align: right;
 	margin-top: 6px;
+}
+.honeypot {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.form-status {
+	min-height: 22px;
+	margin: 14px 0 0;
+	color: var(--text-dim);
+	font-size: 13.5px;
+}
+.form-status.error {
+	color: #ff8f8f;
+}
+.btn:disabled {
+	cursor: wait;
+	opacity: 0.7;
 }
 .contact-side {
 	display: flex;

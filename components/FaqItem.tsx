@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useId } from "react";
 
 interface FaqItemProps {
   question: string;
@@ -15,20 +15,19 @@ export default function FaqItem({
   isOpen,
   onToggle,
 }: FaqItemProps) {
-  const answerRef = useRef<HTMLDivElement>(null);
+  const answerId = useId();
 
   return (
     <div className={`faq-item${isOpen ? " open" : ""}`}>
-      <button className="faq-q" aria-expanded={isOpen} onClick={onToggle}>
+      <button className="faq-q" aria-expanded={isOpen} aria-controls={answerId} onClick={onToggle}>
         <span>{question}</span>
         <span className="plus">+</span>
       </button>
       <div
         className="faq-a"
-        ref={answerRef}
-        style={{
-          maxHeight: isOpen ? `${answerRef.current?.scrollHeight ?? 300}px` : "0px",
-        }}
+        id={answerId}
+        role="region"
+        aria-hidden={!isOpen}
       >
         <p>{answer}</p>
       </div>

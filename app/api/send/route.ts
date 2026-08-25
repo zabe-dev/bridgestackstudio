@@ -1,88 +1,97 @@
-import {
-	ContactConfirmationTemplate,
-	ContactEmailData,
-	ContactEmailTemplate,
-	ContactPlainTextTemplate,
-} from "@/content/email";
+import { ContactConfirmationTemplate, ContactEmailTemplate, ContactPlainTextTemplate } from "@/content/email";
+import { contactSchema } from "@/lib/contact";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { z } from "zod";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const MAX_BODY_BYTES = 12_000;
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+const attempts = new Map<string, { count: number; resetAt: number }>();
 
-const contactSchema = z.object({
-	name: z.string().min(1, "Name is required").max(100, "Name too long"),
-	email: z.string().email("Invalid email address"),
-	phone: z.string().max(20, "Phone number too long").optional(),
-	company: z.string().max(100, "Company name too long").optional(),
-	website: z.string().url("Invalid website URL").optional().or(z.literal("")),
-	subject: z.string().min(1, "Subject is required").max(200, "Subject too long"),
-	message: z.string().min(1, "Message is required").max(2000, "Message too long"),
-});
+function getClientIp(request: NextRequest) {
+  return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+}
+
+function isRateLimited(key: string, now = Date.now()) {
+  if (attempts.size > 1000) {
+    for (const [ip, attempt] of attempts) {
+      if (attempt.resetAt <= now) attempts.delete(ip);
+    }
+  }
+  const current = attempts.get(key);
+  if (!current || current.resetAt <= now) {
+    attempts.set(key, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  current.count += 1;
+  return current.count > RATE_LIMIT;
+}
 
 export async function POST(request: NextRequest) {
-	try {
-		const body = await request.json();
+  const origin = request.headers.get("origin");
+  if (origin && origin !== request.nextUrl.origin) {
+    return NextResponse.json({ error: "Request origin is not allowed" }, { status: 403 });
+  }
 
-		const validationResult = contactSchema.safeParse(body);
-		if (!validationResult.success) {
-			return NextResponse.json(
-				{
-					error: "Validation failed",
-					details: validationResult.error.issues,
-				},
-				{ status: 400 },
-			);
-		}
+  const contentLength = Number(request.headers.get("content-length") || 0);
+  if (contentLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Request is too large" }, { status: 413 });
+  }
+  if (isRateLimited(getClientIp(request))) {
+    return NextResponse.json(
+      { error: "Too many messages. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(RATE_WINDOW_MS / 1000) } },
+    );
+  }
 
-		const { name, email, phone, company, website, subject, message } = validationResult.data;
+  try {
+    const rawBody = await request.text();
+    if (new TextEncoder().encode(rawBody).byteLength > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Request is too large" }, { status: 413 });
+    }
+    const validationResult = contactSchema.safeParse(JSON.parse(rawBody));
+    if (!validationResult.success) {
+      return NextResponse.json(
+        { error: validationResult.error.issues[0]?.message || "Validation failed" },
+        { status: 400 },
+      );
+    }
 
-		const emailData: ContactEmailData = {
-			name,
-			email,
-			phone,
-			company,
-			website,
-			subject,
-			message,
-		};
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("RESEND_API_KEY is not configured");
+      return NextResponse.json({ error: "Contact service is temporarily unavailable" }, { status: 503 });
+    }
 
-		const emailResult = await resend.emails.send({
-			from: "Bridge Stack Studio <contact@bridgestackstudio.com>",
-			to: ["contact@bridgestackstudio.com"],
-			replyTo: email,
-			subject: `Contact Form Submission: ${subject}`,
-			html: ContactEmailTemplate(emailData),
-			text: ContactPlainTextTemplate(emailData),
-		});
+    const { name, email, phone, company, website, subject, message } = validationResult.data;
+    const emailData = { name, email, phone, company, website, subject, message };
+    const resend = new Resend(apiKey);
+    const emailResult = await resend.emails.send({
+      from: "Bridge Stack Studio <contact@bridgestackstudio.com>",
+      to: ["contact@bridgestackstudio.com"],
+      replyTo: emailData.email,
+      subject: `Contact Form Submission: ${emailData.subject}`,
+      html: ContactEmailTemplate(emailData),
+      text: ContactPlainTextTemplate(emailData),
+    });
+    if (emailResult.error) {
+      console.error("Resend error:", emailResult.error);
+      return NextResponse.json({ error: "Failed to send email" }, { status: 502 });
+    }
 
-		if (emailResult.error) {
-			console.error("Resend error:", emailResult.error);
-			return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
-		}
+    const confirmationResult = await resend.emails.send({
+      from: "Bridge Stack Studio <noreply@bridgestackstudio.com>",
+      to: [emailData.email],
+      subject: "Thank you for contacting us!",
+      text: ContactConfirmationTemplate(emailData.name),
+    });
+    if (confirmationResult.error) console.warn("Failed to send confirmation email:", confirmationResult.error);
 
-		try {
-			await resend.emails.send({
-				from: "Bridge Stack Studio <noreply@bridgestackstudio.com>",
-				to: [email],
-				subject: "Thank you for contacting us!",
-				text: ContactConfirmationTemplate(name),
-			});
-		} catch (confirmationError) {
-			console.warn("Failed to send confirmation email:", confirmationError);
-		}
-
-		return NextResponse.json(
-			{
-				message: "Email sent successfully",
-				id: emailResult.data?.id,
-			},
-			{ status: 200 },
-		);
-	} catch (error) {
-		console.error("Contact form error:", error);
-		return NextResponse.json({ error: "Internal server error" }, { status: 500 });
-	}
+    return NextResponse.json({ message: "Email sent successfully" });
+  } catch (error) {
+    console.error("Contact form error:", error);
+    return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
 }

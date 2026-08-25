@@ -1,6 +1,10 @@
+"use client";
+
 import { SiteContent } from "@/lib/content";
+import { useState } from "react";
 
 export default function Header({ site }: { site: SiteContent }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header>
       <nav className="nav">
@@ -43,6 +47,17 @@ export default function Header({ site }: { site: SiteContent }) {
           <a href="#contact" className="btn btn-solid">
             {site.navCta}
           </a>
+        </div>
+        <div className="mobile-menu">
+          <button type="button" aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>
+            Menu
+          </button>
+          <ul id="mobile-navigation" hidden={!menuOpen}>
+            {site.nav.map((item) => (
+              <li key={item.href}><a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a></li>
+            ))}
+            <li><a href="#contact" onClick={() => setMenuOpen(false)}>{site.navCta}</a></li>
+          </ul>
         </div>
       </nav>
     </header>

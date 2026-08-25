@@ -35,7 +35,8 @@ export default function Home() {
   return (
     <>
       <Header site={site} />
-      <main id="top">
+      <main id="main-content" tabIndex={-1}>
+        <div id="top" />
         <Hero hero={hero} />
         <TechStack stack={stack} />
         <Services services={services} />

@@ -24,9 +24,18 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bridgestackstudio.com"),
   title: "Bridge Stack Studio — Custom-coded websites for Indiana businesses",
   description:
     "No templates. No page builders. We design, build, host, and maintain fast, fully custom websites for small businesses across Indiana — start to finish.",
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Bridge Stack Studio",
+    title: "Bridge Stack Studio — Custom-coded websites for Indiana businesses",
+    description: "Fast, fully custom websites for small businesses across Indiana.",
+  },
+  twitter: { card: "summary", title: "Bridge Stack Studio", description: "Custom-coded websites for Indiana businesses." },
 };
 
 export default function RootLayout({
@@ -35,10 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${spaceGrotesk.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
       >
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         {children}
       </body>
     </html>
