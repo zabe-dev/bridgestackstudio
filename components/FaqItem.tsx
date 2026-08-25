@@ -28,6 +28,7 @@ export default function FaqItem({
         id={answerId}
         role="region"
         aria-hidden={!isOpen}
+        hidden={!isOpen}
       >
         <p>{answer}</p>
       </div>

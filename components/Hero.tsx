@@ -127,7 +127,7 @@ export default function Hero({ hero }: { hero: HeroContent }) {
               />
               <circle className="pulse-dot" r="4" fill="#f5a623" />
             </svg>
-            <div className="figure-label figure-label-bottom">Built to carry your business forward</div>
+            <div className="figure-label figure-label-bottom">Built to move business forward</div>
           </div>
         </div>
       </div>
