@@ -1,11 +1,11 @@
 ---
-eyebrow: "Small business website pricing"
-heading: "An investment that fits."
-description: "Compare a one-time website build, a monthly plan, or a custom development project. We’ll confirm the scope and ongoing costs before work begins."
+eyebrow: "Straightforward project options"
+heading: "Choose your launch path."
+description: "Compare an upfront build, a monthly partnership, or a larger scoped project. We’ll confirm the deliverables, timeline, and ongoing costs before work begins."
 plans:
   - key: "Lump sum"
-    title: "Pay once"
-    desc: "Pay for your custom website upfront, with hosting billed monthly."
+    title: "Upfront launch package"
+    desc: "Pay for the build upfront, with hosting billed monthly."
     price: "$3,500"
     priceNote: "+ $25/mo hosting"
     popular: false
@@ -19,7 +19,7 @@ plans:
       - "24/7 support & unlimited revisions"
       - "Lifetime updates, no extra fees"
   - key: "Monthly"
-    title: "Pay monthly"
+    title: "Monthly launch and care plan"
     desc: "A flexible subscription with ongoing updates and support."
     price: "$175"
     priceNote: "/mo · one-year contract"
@@ -34,8 +34,8 @@ plans:
       - "24/7 support & unlimited revisions"
       - "Lifetime updates, no extra fees"
   - key: "Custom"
-    title: "For larger builds"
-    desc: "Tailored solutions for larger businesses, with premium support."
+    title: "Advanced workflow build"
+    desc: "Tailored solutions for teams that need deeper features and premium support."
     price: "$8,000"
     priceNote: "starting price"
     popular: false

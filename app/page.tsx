@@ -36,9 +36,9 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@graph": [
-          { "@type": "Organization", "@id": "https://bridgestackstudio.com/#organization", name: site.brand, url: "https://bridgestackstudio.com/", logo: "https://bridgestackstudio.com/brand/mark.png", email: contact.email, telephone: contact.phoneHref, description: "Independent web design and development studio serving small businesses across Indiana.", areaServed: { "@type": "State", name: "Indiana" } },
+          { "@type": "Organization", "@id": "https://bridgestackstudio.com/#organization", name: site.brand, url: "https://bridgestackstudio.com/", logo: "https://bridgestackstudio.com/brand/mark.png", email: contact.email, telephone: contact.phoneHref, description: "Independent Indiana studio for search-ready service pages, redesigns, managed hosting, and ongoing updates.", areaServed: { "@type": "State", name: "Indiana" } },
           { "@type": "WebSite", "@id": "https://bridgestackstudio.com/#website", url: "https://bridgestackstudio.com/", name: site.brand, inLanguage: "en-US", publisher: { "@id": "https://bridgestackstudio.com/#organization" } },
-          { "@type": "Service", "@id": "https://bridgestackstudio.com/#web-design", name: "Indiana small business web design and development", serviceType: "Custom website design, development, hosting, and maintenance", provider: { "@id": "https://bridgestackstudio.com/#organization" }, areaServed: { "@type": "State", name: "Indiana" }, url: "https://bridgestackstudio.com/#services" }
+          { "@type": "Service", "@id": "https://bridgestackstudio.com/#web-design", name: "Indiana search-ready service page strategy, development, hosting, and maintenance", serviceType: "Website strategy, development, hosting, and maintenance", provider: { "@id": "https://bridgestackstudio.com/#organization" }, areaServed: { "@type": "State", name: "Indiana" }, url: "https://bridgestackstudio.com/#services" }
         ]
       }).replace(/</g, "\\u003c") }} />
       <ReferralBanner />

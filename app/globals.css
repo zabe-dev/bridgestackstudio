@@ -771,7 +771,7 @@ p {
 }
 .contact .section-head {
   display: block;
-  max-width: 640px;
+  max-width: 900px;
   margin-bottom: 36px;
   text-align: left;
 }
@@ -783,6 +783,11 @@ p {
   font-size: 15px;
   line-height: 1.8;
   max-width: none;
+}
+@media (min-width: 821px) {
+  .contact .section-head h2 {
+    white-space: nowrap;
+  }
 }
 .contact-grid {
   display: grid;
@@ -940,7 +945,7 @@ footer {
 .showcase-bottom p { font-size: 12px; }
 .showcase-mark { display: none; }
 
-h2 { font-size: clamp(34px,3.5vw,49px); letter-spacing: -.045em; line-height: 1.17; text-wrap: balance; }
+h2 { font-size: clamp(34px,3.5vw,49px); letter-spacing: -.045em; line-height: 1.17; }
 .eyebrow { font-size: 11px; letter-spacing: .12em; }
 .service-row { padding: 36px 0; }
 .service-row h3 { font-size: 25px; }
@@ -1474,7 +1479,6 @@ h2 {
   line-height: 1.2;
   letter-spacing: -.04em;
   max-width: none;
-  text-wrap: pretty;
 }
 .about-copy h2, .faq h2 { max-width: none; }
 .split-heading { grid-template-columns: minmax(180px, .7fr) minmax(0, 2fr); }
@@ -1577,7 +1581,7 @@ h2 {
 }
 
 /* Let the descriptive headline wrap naturally, with real spaces in its text. */
-.hero h1 { font-size: clamp(40px, 4.5vw, 64px); line-height: 1.12; text-wrap: pretty; }
+.hero h1 { font-size: clamp(40px, 4.5vw, 64px); line-height: 1.12; }
 @media (max-width: 540px) { .hero h1 { font-size: clamp(34px, 9vw, 46px); } }
 
 /* Compact referral offer and a quiet, direct chat shortcut. */

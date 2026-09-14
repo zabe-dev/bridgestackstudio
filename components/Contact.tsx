@@ -16,7 +16,15 @@ export default function Contact({ contact }: { contact: ContactContent }) {
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (subjectRef.current && params.get("referral") === "1") subjectRef.current.value = "Business referral";
-    if (subjectRef.current && plan && ["Pay once", "Pay monthly", "For larger builds"].includes(plan)) subjectRef.current.value = `Website inquiry: ${plan}`;
+    if (
+      subjectRef.current &&
+      plan &&
+      [
+        "Upfront launch package",
+        "Monthly launch and care plan",
+        "Advanced workflow build",
+      ].includes(plan)
+    ) subjectRef.current.value = `Project inquiry: ${plan}`;
   }, []);
   const [message, setMessage] = useState("");
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -197,7 +205,7 @@ export default function Contact({ contact }: { contact: ContactContent }) {
             </div>
             <div className="contact-next">
               <h3>What happens next?</h3>
-              <p>We review your inquiry, then get in touch to discuss your website, timeline, and the right next step. No commitment is needed to start a conversation.</p>
+              <p>We review your inquiry, then get in touch to discuss the scope, timeline, and right next step. No commitment is needed to start a conversation.</p>
             </div>
             <div className="contact-card">
               <div className="k"><Mail size={16} aria-hidden="true" />Send us an email</div>

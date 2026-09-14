@@ -1,11 +1,11 @@
 ---
 eyebrow: "Questions & answers"
-heading: "What to expect."
+heading: "Frequently asked questions"
 description: "Timelines, pricing, and life after launch. Here’s how working with our studio works."
 items:
-  - q: "Do you build websites for businesses across Indiana?"
-    a: "Yes. We work with small businesses throughout Indiana, including local service providers, independent shops, and professional businesses. We can handle planning, design reviews, and ongoing updates remotely, so you do not need to be near the studio."
-  - q: "Can you redesign our existing business website?"
+  - q: "Can you work with owners anywhere in Indiana?"
+    a: "Yes. We work with local service providers, independent shops, and professional teams throughout Indiana. We can handle planning, design reviews, and ongoing updates remotely, so you do not need to be near the studio."
+  - q: "Can you redesign what we already have?"
     a: "Yes. We review your current content, services, and customer needs, then plan a custom replacement. If your page addresses change, we plan redirects so existing links can continue to lead visitors to the right information."
   - q: "How long does a typical project take?"
     a: "We generally complete a website within 14 to 20 days. That covers gathering your content and assets, getting your design approved, and finishing development. The exact timeline depends on how quickly we receive materials and approvals from you."
