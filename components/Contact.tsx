@@ -1,5 +1,5 @@
 "use client";
-import { Send, Mail, Phone, MapPin } from "lucide-react";
+import { Send, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 
 import { FormEvent, useEffect, useRef, useState } from "react";
@@ -201,7 +201,7 @@ export default function Contact({ contact }: { contact: ContactContent }) {
             <div className="contact-card">
               <div className="k">Have a quick question?</div>
               <p>Start a conversation on WhatsApp, or use the form to tell us about your project.</p>
-              <a className="contact-whatsapp" href={whatsappUrl(contact.phoneHref)} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /><span>Chat on WhatsApp</span></a>
+              <a className="contact-whatsapp" href={whatsappUrl(contact.phoneHref)} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /><span>Chat on WhatsApp</span><ArrowUpRight size={15} aria-hidden="true" /></a>
             </div>
             <div className="contact-next">
               <h3>What happens next?</h3>

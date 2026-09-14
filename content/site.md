@@ -1,13 +1,13 @@
 ---
 brand: "Bridge Stack Studio"
 nav:
-  - label: "Services"
+  - label: "WHAT WE DO"
     href: "#services"
-  - label: "Approach"
+  - label: "WHY WORK WITH US"
     href: "#about"
-  - label: "Pricing"
+  - label: "PRICING"
     href: "#pricing"
-  - label: "FAQ"
+  - label: "FAQs"
     href: "#faq"
 navCta: "Book a call"
 footerCopyright: "© 2026 Bridge Stack Studio. All rights reserved."

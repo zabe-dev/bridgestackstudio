@@ -15,15 +15,15 @@ export default function Footer({ site, contact }: { site: SiteContent; contact: 
             <span className="footer-location">Based in Indiana. Working statewide.</span>
           </div>
           <nav className="footer-column" aria-label="Footer navigation">
-            <h2>Explore the studio</h2>
-            <a href="#services">What we handle</a>
-            <a href="#about">About the studio</a>
-            <a href="#process">Our process</a>
-            <a href="#pricing">Project options</a>
-            <a href="#faq">Common questions</a>
+            <h2>SITE LINKS</h2>
+            <a href="#services">WHAT WE DO</a>
+            <a href="#about">WHY WORK WITH US</a>
+            <a href="#process">HOW PROJECTS WORK</a>
+            <a href="#pricing">PRICING</a>
+            <a href="#faq">FAQs</a>
           </nav>
           <div className="footer-column footer-contact">
-            <h2>Start the conversation</h2>
+            <h2>CONTACT</h2>
             <a className="icon-link" href={`mailto:${contact.email}`}><Mail size={15} aria-hidden="true" />{contact.email}</a>
             <a className="icon-link" href={`tel:${contact.phoneHref}`}><Phone size={15} aria-hidden="true" />{contact.phone}</a>
           </div>

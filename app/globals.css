@@ -789,6 +789,15 @@ p {
     white-space: nowrap;
   }
 }
+@media (min-width: 1180px) {
+  .contact .section-head {
+    max-width: none;
+  }
+
+  .contact .section-head p {
+    white-space: nowrap;
+  }
+}
 .contact-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -866,7 +875,7 @@ p {
   padding-bottom: 3px;
 }
 .contact-card a:hover {
-  color: var(--ink);
+  color: var(--amber);
 }
 .form-status {
   font-size: 13px;
@@ -1523,7 +1532,7 @@ h2 {
 .footer-column a { font-size: 13px; color: var(--paper); line-height: 1.7; overflow-wrap: anywhere; }
 .footer-column a:hover { color: var(--amber); }
 .footer-project-link { margin-top: 13px; border-bottom: 1px solid var(--amber); padding-bottom: 5px; }
-.footer-base { border-top: 1px solid var(--dark-border); padding-top: 22px; display: flex; justify-content: space-between; gap: 20px; color: var(--dark-muted); font-size: 10px; }
+.footer-base { border-top: 1px solid var(--dark-border); padding-top: 22px; display: flex; justify-content: space-between; gap: 20px; color: var(--dark-muted); font-size: 10px; text-transform: uppercase; }
 @media (max-width: 1000px) { .footer-main { gap: 32px; grid-template-columns: 1.1fr .65fr 1fr; } }
 @media (max-width: 820px) { .footer-main { grid-template-columns: 1fr 1fr; gap: 35px; } .footer-intro { grid-column: 1/-1; } .footer-intro > p { max-width: 520px; } }
 @media (max-width: 540px) { .studio-footer { padding-top: 45px; } .footer-main { grid-template-columns: 1fr; gap: 30px; } .footer-column { gap: 10px; } .footer-base { flex-direction: column; gap: 8px; } }
@@ -1602,7 +1611,7 @@ h2 {
 }
 
 .whatsapp-icon { flex-shrink: 0; }
-.contact-card .contact-whatsapp { display: inline-flex; align-items: center; gap: 9px; }
+.contact-card .contact-whatsapp { display: inline-flex; align-items: center; gap: 9px; border-bottom: 0; padding-bottom: 0; }
 
 /* Small purpose-specific icons; labels remain the primary affordance. */
 .btn { gap: 9px; }

@@ -55,7 +55,7 @@ export default function Header({ site }: { site: SiteContent }) {
           ))}
         </ul>
         <a className="btn btn-dark nav-cta" href="#contact">
-          <MessageCircle size={16} aria-hidden="true" /> Let’s talk
+          <MessageCircle size={16} aria-hidden="true" /> LET&apos;S TALK
         </a>
         <button
           id="menu-toggle"
@@ -85,7 +85,7 @@ export default function Header({ site }: { site: SiteContent }) {
             </ul>
             <div className="mobile-menu-footer">
               <p>Something in mind?<br /><span>Let’s make it happen.</span></p>
-              <a className="btn btn-solid" href="#contact" onClick={() => setMenuOpen(false)}><MessageCircle size={16} aria-hidden="true" />Let’s talk</a>
+              <a className="btn btn-solid" href="#contact" onClick={() => setMenuOpen(false)}><MessageCircle size={16} aria-hidden="true" />LET&apos;S TALK</a>
             </div>
           </nav>
         </div>
