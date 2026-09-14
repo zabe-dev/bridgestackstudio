@@ -1,135 +1,139 @@
+import { MessageCircle, LayoutGrid } from "lucide-react";
 import { HeroContent } from "@/lib/content";
-
 export default function Hero({ hero }: { hero: HeroContent }) {
   return (
-    <section className="hero grid-dark">
+    <section className="hero">
       <div className="wrap">
         <div className="hero-grid">
-          <div>
-            <div className="eyebrow">{hero.eyebrow}</div>
-            <h1>
-              {hero.headlineLines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
-              <span className="accent">{hero.headlineAccent}</span>
-            </h1>
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <span className="small-dot" />
+              {hero.eyebrow}
+            </div>
+            <h1>{[...hero.headlineLines, hero.headlineAccent].join(" ")}</h1>
             <p className="lead">{hero.lead}</p>
             <div className="hero-ctas">
-              <a href="#contact" className="btn btn-solid btn-arrow">
+              <a className="btn btn-solid" href="#contact">
+                <MessageCircle size={17} aria-hidden="true" />
                 {hero.ctaPrimary}
-              </a>
-              <a href="#about" className="btn btn-outline">
-                {hero.ctaSecondary}
-              </a>
-            </div>
-            <div className="hero-proof" aria-label="Service highlights">
-              <span><strong>14–20</strong> days to launch</span>
-              <span><strong>100%</strong> custom coded</span>
-              <span><strong>Indiana</strong> based support</span>
-            </div>
-          </div>
 
-          <div className="hero-figure" aria-hidden="true">
-            <div className="figure-label figure-label-top">Strategy → structure</div>
-            <svg
-              viewBox="0 0 900 260"
-              className="draw"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                className="d1"
-                x1="250"
-                y1="45"
-                x2="250"
-                y2="200"
-                stroke="#eeece3"
-                strokeWidth="3"
-              />
-              <line
-                className="d1"
-                x1="650"
-                y1="45"
-                x2="650"
-                y2="200"
-                stroke="#eeece3"
-                strokeWidth="3"
-              />
-              <line
-                className="d1"
-                x1="235"
-                y1="200"
-                x2="265"
-                y2="200"
-                stroke="#93a19d"
-                strokeWidth="3"
-              />
-              <line
-                className="d1"
-                x1="635"
-                y1="200"
-                x2="665"
-                y2="200"
-                stroke="#93a19d"
-                strokeWidth="3"
-              />
-              <line
-                className="d2"
-                x1="40"
-                y1="200"
-                x2="860"
-                y2="200"
-                stroke="#eeece3"
-                strokeWidth="2.5"
-              />
-              <path
-                className="d3"
-                d="M40,150 Q120,80 250,45 Q450,190 650,45 Q780,80 860,150"
-                fill="none"
-                stroke="#f5a623"
-                strokeWidth="2.5"
-              />
-              <g className="d4" stroke="#5bc0be" strokeWidth="1.5">
-                <line x1="90" y1="132" x2="90" y2="200" />
-                <line x1="140" y1="112" x2="140" y2="200" />
-                <line x1="190" y1="80" x2="190" y2="200" />
-                <line x1="330" y1="110" x2="330" y2="200" />
-                <line x1="390" y1="150" x2="390" y2="200" />
-                <line x1="450" y1="175" x2="450" y2="200" />
-                <line x1="510" y1="150" x2="510" y2="200" />
-                <line x1="570" y1="110" x2="570" y2="200" />
-                <line x1="710" y1="80" x2="710" y2="200" />
-                <line x1="760" y1="112" x2="760" y2="200" />
-                <line x1="810" y1="132" x2="810" y2="200" />
-              </g>
-              <circle
-                className="node"
-                style={{ animationDelay: "1.1s" }}
-                cx="250"
-                cy="45"
-                r="4"
-                fill="#f5a623"
-              />
-              <circle
-                className="node"
-                style={{ animationDelay: "1.2s" }}
-                cx="650"
-                cy="45"
-                r="4"
-                fill="#f5a623"
-              />
-              <circle
-                className="node"
-                style={{ animationDelay: "1.3s" }}
-                cx="450"
-                cy="190"
-                r="4"
-                fill="#f5a623"
-              />
-              <circle className="pulse-dot" r="4" fill="#f5a623" />
-            </svg>
-            <div className="figure-label figure-label-bottom">Built to move business forward</div>
+              </a>
+              <a className="text-link" href="#services">
+                <LayoutGrid size={16} aria-hidden="true" />
+                {hero.ctaSecondary}
+
+              </a>
+            </div>
+            <p className="hero-note">
+              Custom design. Managed hosting. Ongoing support.
+            </p>
           </div>
+          <figure className="showcase">
+            <div className="showcase-top">
+              <span>A better first impression.</span>
+
+            </div>
+            <div
+              className="browser-preview"
+              role="img"
+              aria-label="Illustrative website design for a fictional home builder, Oak and Field. A clean editorial design with an architectural house illustration."
+            >
+              <div className="browser-bar">
+                <span className="browser-dots">● ● ●</span>
+                <span>oakandfield.example</span>
+                <span>—</span>
+              </div>
+              <div className="sample-nav">
+                <b>
+                  OAK <i>&</i> FIELD
+                </b>
+                <span>
+                  Our approach &nbsp;&nbsp; Our homes &nbsp;&nbsp;{" "}
+                  <u>Let’s build</u>
+                </span>
+              </div>
+              <div className="sample-copy">
+                <span className="sample-label">
+                  THOUGHTFULLY BUILT. ROOTED IN INDIANA.
+                </span>
+                <div>
+                  Room to live.
+                  <br />
+                  <em>Space to belong.</em>
+                </div>
+                <span className="sample-cta">Find your place</span>
+              </div>
+              <svg
+                className="house-art"
+                viewBox="0 0 640 310"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect width="640" height="310" fill="var(--surface)" />
+                <circle cx="508" cy="58" r="33" fill="var(--amber)" />
+                <path
+                  d="M0 182 Q100 145 227 178 T640 155 V310 H0Z"
+                  fill="var(--border)"
+                />
+                <path d="M0 221 Q200 187 640 227V310H0Z" fill="var(--muted)" />
+                <path d="M105 171L267 87L431 166V267H105Z" fill="var(--paper)" />
+                <path d="M267 87L431 166V267H267Z" fill="var(--border)" />
+                <path
+                  d="M86 171L267 73L449 164L431 178L267 97L105 185Z"
+                  fill="var(--ink)"
+                />
+                <path d="M419 184H555V266H419Z" fill="var(--paper)" />
+                <path d="M408 179H566V191H408Z" fill="var(--ink)" />
+                <path
+                  d="M131 190H189V242H131Z M207 168H248V265H207Z M299 172H344V231H299Z M366 205H402V244H366Z M445 209H526V250H445Z"
+                  fill="var(--dark-surface)"
+                />
+                <path
+                  d="M160 190V242M131 216H189M321 172V231M299 201H344M485 209V250"
+                  stroke="var(--paper)"
+                  strokeWidth="3"
+                />
+                <path d="M201 267L170 310H302L248 267Z" fill="var(--surface)" />
+                <path
+                  d="M49 265V124M580 267V112"
+                  stroke="var(--ink)"
+                  strokeWidth="8"
+                />
+                <path
+                  d="M49 75C4 127 2 183 49 204C96 181 87 122 49 75Z"
+                  fill="var(--ink)"
+                />
+                <path
+                  d="M580 64C536 113 526 170 580 201C630 172 623 113 580 64Z"
+                  fill="var(--dark-surface)"
+                />
+                <path
+                  d="M70 263Q126 226 179 268M349 267Q391 231 433 267M486 269Q526 240 570 269"
+                  fill="var(--dark-surface)"
+                />
+              </svg>
+              <div className="sample-bottom">
+                <span>Considered details. Lasting quality.</span>
+                <span>01 — 03</span>
+              </div>
+            </div>
+            <figcaption>
+              <span>Design exploration / Local home builder</span>
+              <span>Concept, not client work</span>
+            </figcaption>
+            <div className="showcase-bottom">
+              <span className="showcase-mark" aria-hidden="true">
+                ✳
+              </span>
+              <p>
+                Your business has a story.
+                <br />
+                <strong>Let’s give it a proper home.</strong>
+              </p>
+            </div>
+          </figure>
         </div>
+
       </div>
     </section>
   );

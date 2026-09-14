@@ -23,18 +23,18 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            io.unobserve(entry.target);
+            el.animate([{ opacity: 0.5, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }], { duration: 480, easing: "cubic-bezier(.2,.7,.2,1)" });
+            io.unobserve(el);
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.12 },
     );
-
     io.observe(el);
     return () => io.disconnect();
   }, []);

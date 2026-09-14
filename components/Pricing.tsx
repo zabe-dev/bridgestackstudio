@@ -1,36 +1,39 @@
-import { PricingContent } from "@/lib/content";
+import { MessageCircle } from "lucide-react";
 import Reveal from "./Reveal";
-
+import { PricingContent } from "@/lib/content";
 export default function Pricing({ pricing }: { pricing: PricingContent }) {
   return (
-    <section className="pricing" id="pricing">
+    <section className="pricing section" id="pricing">
       <div className="wrap">
-        <div className="section-head">
-          <div className="eyebrow">{pricing.eyebrow}</div>
-          <h2>{pricing.heading}</h2>
-          <p style={{ color: "var(--text-dim)" }}>{pricing.description}</p>
+        <div className="pricing-heading">
+          <div>
+            <div className="eyebrow">{pricing.eyebrow}</div>
+            <h2>{pricing.heading}</h2>
+          </div>
+          <p>{pricing.description}</p>
         </div>
-
         <div className="plans">
           {pricing.plans.map((plan) => (
-            <Reveal
-              as="div"
+            <Reveal as="article"
               className={`plan${plan.popular ? " popular" : ""}`}
               key={plan.key}
             >
-              {plan.popular && <div className="badge">MOST POPULAR</div>}
-              <div className="k">{plan.key.toUpperCase()}</div>
-              <h3>{plan.title}</h3>
-              <div className="desc">{plan.desc}</div>
-              <div className="price">
-                {plan.price}
-                <small> {plan.priceNote}</small>
+              <div className="plan-label">
+                <span>{plan.key}</span>
+                {plan.popular && (
+                  <span className="badge">Ongoing partnership</span>
+                )}
               </div>
+              <h3>{plan.title}</h3>
+              <p className="desc">{plan.desc}</p>
+              <div className="price">{plan.price}</div>
+              <div className="price-note">{plan.priceNote}</div>
               <a
-                href="#contact"
+                href={`?plan=${encodeURIComponent(plan.title)}#contact`}
                 className={`btn ${plan.popular ? "btn-solid" : "btn-outline"}`}
               >
-                Schedule a call
+                <MessageCircle size={16} aria-hidden="true" />
+                Discuss {plan.title.toLowerCase()}
               </a>
               <ul>
                 {plan.features.map((feature) => (
@@ -40,6 +43,10 @@ export default function Pricing({ pricing }: { pricing: PricingContent }) {
             </Reveal>
           ))}
         </div>
+        <p className="pricing-note">
+          Not sure where to start? We’ll help you choose the right fit on a free
+          consultation.
+        </p>
       </div>
     </section>
   );

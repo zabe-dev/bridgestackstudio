@@ -1,10 +1,10 @@
 ---
-eyebrow: "Who we are"
-heading: "What sets us apart"
+eyebrow: "Your local web partner"
+heading: "Invested in your business."
 paragraphs:
-  - "Bridge Stack Studio is an Indiana-based web agency helping small and local businesses build a stronger online presence. Unlike most agencies, we build fast, fully custom sites from the ground up — no templates, no page builders, no WordPress."
-  - "Our approach is smart strategy, modern design, and hand-coded performance, so your business stands out and your website works as hard as you do."
-  - "Beyond design and development, we handle the essentials that keep a site running — hosting, maintenance, updates, and ongoing support — so you're not juggling multiple vendors. Whether it's your first site or a replacement for an outdated one, we build it to grow with you."
+  - "Bridge Stack Studio is an independent Indiana web design agency working with small and local businesses statewide. We take the time to understand your services, your customers, and what makes your business worth choosing."
+  - "For a first website, we help organize the essentials. For a redesign, we look at what feels dated, what is difficult to use, and what customers need to find more easily. Every project starts with your business, not a prebuilt theme."
+  - "Design, development, hosting, and ongoing care stay with one studio. You have a direct point of contact when your business changes and your website needs to catch up."
 stats:
   - value: "14–20"
     label: "Days to launch"

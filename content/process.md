@@ -1,7 +1,7 @@
 ---
-eyebrow: "How a project crosses the line"
-heading: "From kickoff to launch, in about 14–20 days."
-description: "Timeline depends on how quickly we get your content and approvals — this is the typical span."
+eyebrow: "How we work"
+heading: "From first call to launch."
+description: "Most websites launch in 14–20 days, depending on content and approvals. You’ll know what’s happening at every step."
 stages:
   - key: "Stage 01"
     title: "Discover"
@@ -11,7 +11,7 @@ stages:
     body: "A custom design tailored to your brand, sent for approval."
   - key: "Stage 03"
     title: "Build"
-    body: "Hand-coded in React & Next.js — no shortcuts."
+    body: "We bring the design to life and check it across screen sizes."
   - key: "Stage 04"
     title: "Launch"
     body: "Hosting, domain, and email set up and live."

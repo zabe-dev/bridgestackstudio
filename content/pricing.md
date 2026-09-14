@@ -1,11 +1,11 @@
 ---
-eyebrow: "Invest in your growth"
-heading: "Plans & pricing"
-description: "Choose the plan that fits your needs and grow your business with confidence."
+eyebrow: "Small business website pricing"
+heading: "An investment that fits."
+description: "Compare a one-time website build, a monthly plan, or a custom development project. We’ll confirm the scope and ongoing costs before work begins."
 plans:
   - key: "Lump sum"
     title: "Pay once"
-    desc: "A single payment package, with limited support and updates."
+    desc: "Pay for your custom website upfront, with hosting billed monthly."
     price: "$3,500"
     priceNote: "+ $25/mo hosting"
     popular: false

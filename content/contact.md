@@ -1,11 +1,11 @@
 ---
-eyebrow: "Connect with us"
-heading: "Book a free consultation"
-description: "Let's talk about a strategy built for your business."
+eyebrow: "Let’s get started"
+heading: "Make your next move."
+description: "Tell us about your Indiana business, the customers you serve, and what you need from your website. We’ll discuss the scope, timing, and plan that fits."
 email: "contact@bridgestackstudio.com"
-emailNote: "In digital marketing, it all begins with a single email. The form works too, but if you'd rather write directly, here you go."
+emailNote: "Prefer to email? We’d love to hear from you."
 phone: "+1 (502) 650-1044"
 phoneHref: "+15026501044"
-phoneNote: "Keen to chat? Call the number below and we'll connect you with the right person on our team."
+phoneNote: "Sometimes a conversation is the best place to start."
 location: "Indiana, USA — serving small and local businesses statewide."
 ---

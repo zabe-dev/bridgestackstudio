@@ -1,10 +1,9 @@
 ---
-eyebrow: "Indiana · Custom-coded web studio"
+eyebrow: "Custom websites · Redesigns · Ongoing support"
 headlineLines:
-  - "Custom coded."
-  - "Lightning fast."
-headlineAccent: "Zero hassle."
-lead: "No templates. No page builders. We design, build, host, and maintain fast, fully custom websites for small businesses across Indiana — start to finish."
-ctaPrimary: "Book a free consultation"
-ctaSecondary: "I want to know more"
+  - "Custom websites for"
+headlineAccent: "businesses in Indiana."
+lead: "Get a custom website that makes your services clear and your business easy to contact. We design, redesign, and maintain mobile-friendly websites for small businesses across Indiana."
+ctaPrimary: "Discuss your website"
+ctaSecondary: "Explore our services"
 ---
