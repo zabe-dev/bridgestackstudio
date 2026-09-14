@@ -1586,7 +1586,7 @@ h2 {
 
 /* Compact referral offer and a quiet, direct chat shortcut. */
 .referral-banner { background: var(--ink); color: var(--paper); }
-.referral-banner-inner { display: flex; justify-content: center; align-items: center; gap: 24px; padding-block: 10px; }
+.referral-banner-inner { display: flex; justify-content: center; align-items: center; padding-block: 10px; }
 .referral-banner p { color: var(--paper); font-size: 12px; line-height: 1.6; }
 .referral-banner strong { font-weight: 500; color: var(--amber); }
 .referral-banner a { color: var(--paper); font-size: 12px; text-decoration: underline; text-underline-offset: 4px; flex-shrink: 0; }
@@ -1595,7 +1595,7 @@ h2 {
 .whatsapp-chat:hover { background: var(--amber); color: var(--ink); border-color: var(--amber); }
 .studio-footer { padding-bottom: 96px; }
 @media (max-width: 540px) {
-  .referral-banner-inner { flex-direction: column; gap: 3px; padding-block: 9px; text-align: center; }
+  .referral-banner-inner { padding-block: 9px; text-align: center; }
   .referral-banner p, .referral-banner a { font-size: 11px; }
   .whatsapp-chat { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); padding: 12px 15px; font-size: 11px; }
 }

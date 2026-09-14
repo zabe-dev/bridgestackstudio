@@ -1,4 +1,4 @@
-import { MessageCircle, LayoutGrid } from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 import { HeroContent } from "@/lib/content";
 export default function Hero({ hero }: { hero: HeroContent }) {
   return (
@@ -13,11 +13,6 @@ export default function Hero({ hero }: { hero: HeroContent }) {
             <h1>{[...hero.headlineLines, hero.headlineAccent].join(" ")}</h1>
             <p className="lead">{hero.lead}</p>
             <div className="hero-ctas">
-              <a className="btn btn-solid" href="#contact">
-                <MessageCircle size={17} aria-hidden="true" />
-                {hero.ctaPrimary}
-
-              </a>
               <a className="text-link" href="#services">
                 <LayoutGrid size={16} aria-hidden="true" />
                 {hero.ctaSecondary}

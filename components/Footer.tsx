@@ -26,7 +26,6 @@ export default function Footer({ site, contact }: { site: SiteContent; contact: 
             <h2>Start the conversation</h2>
             <a className="icon-link" href={`mailto:${contact.email}`}><Mail size={15} aria-hidden="true" />{contact.email}</a>
             <a className="icon-link" href={`tel:${contact.phoneHref}`}><Phone size={15} aria-hidden="true" />{contact.phone}</a>
-            <a className="footer-project-link" href="#contact">Plan the project</a>
           </div>
         </div>
         <div className="footer-base">
