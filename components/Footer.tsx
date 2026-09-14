@@ -30,7 +30,7 @@ export default function Footer({ site, contact }: { site: SiteContent; contact: 
         </div>
         <div className="footer-base">
           <span>{site.footerCopyright}</span>
-          <span>Strategy, development & care in Indiana</span>
+          <span>Website strategy, development & management in Indiana</span>
         </div>
       </div>
     </footer>
