@@ -2,7 +2,7 @@
 eyebrow: "Your local web partner"
 heading: "A hands-on studio for owners who want more of the right people finding them."
 paragraphs:
-  - "Bridge Stack Studio works with Indiana owners who need their online presence to increase reach, explain the work, build trust, and make the next step obvious. We take the time to understand your services, your customers, and what makes you worth choosing."
+  - "Bridge Stack Studio helps Indiana businesses present their services clearly, earn trust faster, and make it easy for the right customers to reach out. We learn what you offer, who you serve, and what makes your business worth choosing."
   - "For a first site, we help organize the essentials. For a redesign, we look at what feels dated, what is difficult to use, and what customers need to find more easily. Every project starts with your operation, not a prebuilt theme."
   - "Design, development, hosting, and ongoing care stay with one studio. You have a direct point of contact when your business changes and your website needs to catch up."
 stats:
