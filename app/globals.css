@@ -1588,9 +1588,10 @@ h2 {
 .referral-banner { background: var(--ink); color: var(--paper); }
 .referral-banner-inner { display: flex; justify-content: center; align-items: center; padding-block: 10px; }
 .referral-banner p { color: var(--paper); font-size: 12px; line-height: 1.6; }
-.referral-banner strong { font-weight: 500; color: var(--amber); }
-.referral-banner a { color: var(--paper); font-size: 12px; text-decoration: underline; text-underline-offset: 4px; flex-shrink: 0; }
-.referral-banner a:hover { color: var(--amber); }
+.referral-offer, .referral-banner strong { color: var(--amber); }
+.referral-banner strong { font-weight: 500; }
+.referral-banner a { color: inherit; font-size: 12px; text-decoration-line: underline; text-decoration-style: dotted; text-underline-offset: 4px; flex-shrink: 0; }
+.referral-banner a:hover { color: var(--paper); }
 .whatsapp-chat { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 20; display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 13px 18px; border-radius: 28px; background: var(--ink); color: var(--paper); border: 1px solid var(--dark-border); box-shadow: 0 4px 16px #0d13151a; font-size: 12px; }
 .whatsapp-chat:hover { background: var(--amber); color: var(--ink); border-color: var(--amber); }
 .studio-footer { padding-bottom: 96px; }
