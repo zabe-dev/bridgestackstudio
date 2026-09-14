@@ -150,6 +150,10 @@ p {
   font-size: 20px;
   line-height: 1;
 }
+.btn .btn-label {
+  font-size: inherit;
+  line-height: inherit;
+}
 .btn-solid {
   background: var(--amber);
   color: var(--ink);

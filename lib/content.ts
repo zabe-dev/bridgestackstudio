@@ -21,6 +21,7 @@ export interface HeroContent {
   headlineLines: string[];
   headlineAccent: string;
   lead: string;
+  ctaPrimary: string;
   ctaSecondary: string;
 }
 

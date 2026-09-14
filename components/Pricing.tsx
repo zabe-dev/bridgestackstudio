@@ -33,7 +33,7 @@ export default function Pricing({ pricing }: { pricing: PricingContent }) {
                 className={`btn ${plan.popular ? "btn-solid" : "btn-outline"}`}
               >
                 <MessageCircle size={16} aria-hidden="true" />
-                Discuss {plan.title.toLowerCase()}
+                Let&apos;s get started
               </a>
               <ul>
                 {plan.features.map((feature) => (
